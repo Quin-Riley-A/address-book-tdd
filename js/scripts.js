@@ -30,10 +30,11 @@ AddressBook.prototype.deleteContact = function(id) {
 }
 
 //Business Logic for Contacts
-function Contact(firstName, lastName, phoneNumber) {
+function Contact(firstName, lastName, phoneNumber, email) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.phoneNumber = phoneNumber;
+  this.email = email;
 }
 
 Contact.prototype.fullName = function() {
@@ -50,11 +51,12 @@ function listContacts(addressBookToDisplay) {
   Object.keys(addressBookToDisplay.contacts).forEach(function(key) {
     const contact = addressBookToDisplay.findContact(key);
     const li = document.createElement("li");
-    li.append(contact.fullName());
+    li.append(contact.fullName() + " ");
+    li.append(contact.email);
     li.setAttribute("id", contact.id);
     ul.append(li);
   });
-  contactsDiv.append(ul)
+  contactsDiv.append(ul);
 }
 
 function handleFormSubmission(event) {
@@ -62,7 +64,9 @@ function handleFormSubmission(event) {
   const inputtedFirstName = document.querySelector("input#new-first-name").value;
   const inputtedLastName = document.querySelector("input#new-last-name").value;
   const inputtedPhoneNumber = document.querySelector("input#new-phone-number").value;
-  let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+  const inputtedEmail = document.querySelector("input#new-email").value;
+  
+  let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail);
   addressBook.addContact(newContact);
   listContacts(addressBook);
 }
