@@ -9,6 +9,5 @@ describe('Contact', () => {
     expect(contact1.phoneNumber).toEqual("603-555-2000");
     expect(typeof contact1.phoneNumber).toEqual("string");
     expect(contact1.email).toEqual("sJam@ymail.com");
-
   });
 });
