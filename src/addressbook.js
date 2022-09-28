@@ -1,3 +1,5 @@
+import { tSImportEqualsDeclaration } from "@babel/types";
+
 //Business Logic for AdressBook
 export default function AddressBook() {
   this.contacts = {};
@@ -18,7 +20,7 @@ AddressBook.prototype.findContact = function(id) {
   if (this.contacts[id] !== undefined) {
     return this.contacts[id];
   }
-  return false;
+  //return false;
 };
 
 AddressBook.prototype.deleteContact = function(id) {
