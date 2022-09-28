@@ -41,5 +41,4 @@ describe('AddressBook', () => {
     expect(returnValue).toEqual(true);
     expect(addBook.contacts[1]).toEqual(undefined);
   });
-
 });

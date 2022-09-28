@@ -6,5 +6,5 @@ export default function Contact(firstName, lastName, phoneNumber, email) {
 }
 
 Contact.prototype.fullName = function() {
-  return this.firstName + " " + this.lastName;
+  return this.firstName + "" + this.lastName;
 };
