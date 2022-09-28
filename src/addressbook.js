@@ -24,9 +24,9 @@ AddressBook.prototype.findContact = function(id) {
 };
 
 AddressBook.prototype.deleteContact = function(id) {
-//  if (this.contacts[id] === undefined) {
-//    return false;
-//  }
-//  delete this.contacts[id];
+  if (this.contacts[id] === undefined) {
+    return false;
+  }
+  delete this.contacts[id];
   return true;
 }
