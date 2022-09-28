@@ -1,5 +1,3 @@
-//import test from "node:test";
-//import test from "node:test";
 import AddressBook from "../src/addressbook";
 import Contact from '../src/contact.js';
 
@@ -36,4 +34,12 @@ describe('AddressBook', () => {
     expect(addBook.deleteContact(1)).toEqual(false);
   });
   
+  test('should return true if deleteContact receives a valid id and deletes corresponding contact.', () => {
+    const contact1 = new Contact("Sonya", "Jamalungma", "603-555-2000", "sJam@ymail.com");
+    addBook.addContact(contact1);
+    const returnValue = addBook.deleteContact(1);
+    expect(returnValue).toEqual(true);
+    expect(addBook.contacts[1]).toEqual(undefined);
+  });
+
 });
