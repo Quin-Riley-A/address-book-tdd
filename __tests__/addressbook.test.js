@@ -7,7 +7,7 @@ describe('AddressBook', () => {
   beforeEach(() => {
     addBook = new AddressBook();
   });
-
+  
   test('should create a new address book', () => {
     expect(addBook.currentId).toEqual(0);
   });
