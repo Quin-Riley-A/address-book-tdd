@@ -31,4 +31,9 @@ describe('AddressBook', () => {
     addBook.addContact(contact1);
     expect(addBook.findContact(2)).toEqual(false);
   });
+
+  test('should return false if deleteContact receives not a vaild id', () => {
+    expect(addBook.deleteContact(1)).toEqual(false);
+  });
+  
 });
