@@ -20,7 +20,7 @@ AddressBook.prototype.findContact = function(id) {
   if (this.contacts[id] !== undefined) {
     return this.contacts[id];
   }
-  //return false;
+  return false;
 };
 
 AddressBook.prototype.deleteContact = function(id) {
